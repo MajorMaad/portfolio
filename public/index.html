@@ -1,39 +1,311 @@
+<!-- Copyright 2013-2015 Iron Summit Media Strategies, LLC -->
 <!DOCTYPE html>
 <html lang="en" ng-app="portfolioApp">
 <head>
     <meta charset="UTF-8">
     <base href="/">
 
-    <title>Portfolio, Quentin Audinot</title>
+    <title>Quentin Audinot</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="libs/animate.css/animate.min.css">
     <link rel="stylesheet" href="dist/css/style.css">
 
-    <!-- JS -->
-    <script src="libs/jquery/dist/jquery.min.js"></script>
-    <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="libs/angular/angular.min.js"></script>
-
-    <!-- ANGULAR -->
-    <!-- <script src="dist/js/app.min.js"></script> -->
-    <script src="src/js/controllers/main.js"></script>
-    <script src="src/js/services/projects.js"></script>
-    <script src="src/js/app.js"></script>
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
 </head>
-<body ng-controller="mainController">
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="/">Quentin Audinot</a>
-                </div>
+<body ng-controller="mainController" id="page-top">
 
+      <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+          <div class="container-fluid">
+
+              <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#portfolio-navbar-collapse-1">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Quentin Audinot</a>
+              </div>
+
+              <div class="collapse navbar-collapse" id="portfolio-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/"><i class="fa fa-home"></i> Home</a></li>
+                  <!-- TODO: Changer sections -->
+                  <li>
+                    <a class="page-scroll" href="#about">About</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#skills">Skills</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#projects">Projects</a>
+                  </li>
+                  <li>
+                    <a class="page-scroll" href="#contact">Contact</a>
+                  </li>
                 </ul>
+              </div>
+              <!-- /.navbar-collapse -->
+          </div>
+          <!-- /.container-fluid -->
+      </nav>
+
+      <header>
+        <div class="header-content">
+          <div class="header-content-inner">
+            <h1>Quentin Audinot</h1>
+            <hr>
+            <h1>Web and mobile developper</h1>
+            <hr>
+            <p>
+                Looking for a 6 months internship, starting from August 2016
+            </p>
+            <a href="#projects" class="btn btn-primary btn-xl page-scroll">My projects</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="bg-primary" id="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+              <h2 class="section-heading">About me</h2>
+              <p class="text-faded">
+                  I am young engineer about to get my diploma in Computer Science. Passionate about new technologies, music and football, I also like to experiment new things in Web and Mobile development.
+              </p>
+              <a href="#contact" class="btn btn-default btn-xl page-scroll">Contact me</a>
             </div>
-        </nav>
-    </header>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              <h2 class="section-heading">Skills</h2>
+              <hr class="primary">
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-android wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Mobile development</h3>
+                <p class="text-muted">
+                  Android / Java
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-code wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Back-end development</h3>
+                <p class="text-muted">
+                    Node.js / PHP / Python
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-html5 wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Front-end development</h3>
+                <p class="text-muted">
+                  HTML5 / CSS3 / Bootstrap </br>
+                  Javascript / jQuery / Angular.js
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-database wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Databases</h3>
+                <p class="text-muted">
+                  MySql / MongoDB
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-code-fork wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Versioning</h3>
+                <p class="text-muted">
+                  Git / Subversion
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 text-center">
+              <div class="skills-box">
+                <i class="fa fa-4x fa-terminal wow bounceIn text-primary" data-wow-delay=".1s"></i>
+                <h3>Operating Systems</h3>
+                <p class="text-muted">
+                  Linux / Windows
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="no-padding" id="projects">
+        <div class="container-fluid">
+          <div class="row no-gutter">
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/1.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/2.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/3.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/4.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/5.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-lg-4 col-sm-6">
+              <a href="#" class="projects-box">
+                <img src="img/portfolio/6.jpg" alt="project" />
+                <div class="projects-box-caption">
+                  <div class="projects-box-caption-content">
+                    <div class="project-category text-faded">
+                      Category
+                    </div>
+                    <div class="project-name">
+                      Project Name
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="bg-dark">
+        <div class="container text-center">
+          <div class="call-to-action">
+            <h2>My projects</h2>
+            <a href="https://github.com/MajorMaad" target="_blank" class="btn btn-default btn-xl wow tada">See more</a>
+          </div>
+        </div>
+      </aside>
+
+      <section id=contact>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+              <h2 class="section-heading">Get in Touch !</h2>
+              <hr class="primary">
+              <p>
+                Do not hesitate to contact me by e-mail.
+              </p>
+            </div>
+
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+              <i class="fa fa-phone fa-3x wow bounceIn"></i>
+              <p>(+33) 06 19 73 16 09 </p>
+            </div>
+
+            <div class="col-lg-4 text-center">
+              <i class="fa fa-envelope-o fa-3x wow bounceIn"></i>
+              <p>
+                <a href="mailto:quentin.audinot@gmail.com">quentin.audinot@gmail.com</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- JS -->
+      <script src="libs/jquery/dist/jquery.min.js"></script>
+      <script src="libs/bootstrap/dist/js/bootstrap.min.js"></script>
+      <script src="libs/angular/angular.min.js"></script>
+
+      <!-- Plugin JS -->
+      <script src="libs/jquery-easing-original/jquery.easing.min.js"></script>
+      <script src="libs/jquery.fittext.js"></script>
+      <script src="libs/wowjs/dist/wow.min.js"></script>
+
+      <!-- Custom JS -->
+      <script src="src/js/content.js"></script>
+
+      <!-- ANGULAR -->
+      <script src="dist/js/app.min.js"></script>
 </body>
 </html>

@@ -6,9 +6,7 @@ var gulp = require('gulp'),
 var env = process.env.NODE_ENV || 'development';
 var outputDir = "public/dist/";
 
-gulp.task('default', function () {
-    gulp.run('styles', 'scripts');
-});
+gulp.task('default', ['scripts', 'styles', 'watch']);
 
 gulp.task('styles', function() {
     var config = {};
@@ -31,4 +29,9 @@ gulp.task('scripts', function() {
         .pipe(concat('app.min.js'))
         .pipe(uglify({ mangle: false }))
         .pipe(gulp.dest(outputDir + 'js'));
+});
+
+gulp.task('watch', function() {
+    gulp.watch('public/src/js/**/*.js', ['scripts']);
+    gulp.watch('public/src/scss/**/*.scss', ['styles']);
 });

@@ -8,7 +8,8 @@
     "jsonwebtoken": "~5.4.1",
     "method-override": "~2.3.5",
     "mongoose": "~3.8.0",
-    "password-hash": "~1.2.2"
+    "password-hash": "~1.2.2",
+    "serve-favicon": "^2.3.0"
   },
   "devDependencies": {
     "gulp": "^3.9.0",

@@ -4,6 +4,9 @@
   "dependencies": {
     "bootstrap": "latest",
     "font-awesome": "latest",
-    "angular": "latest"
+    "angular": "latest",
+    "animate.css": "latest",
+    "wowjs": "latest",
+    "jquery-easing-original": "latest"
   }
 }
