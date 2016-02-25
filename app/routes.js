@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 
 var User = require('./models/user');
 
+var ContactHandler = require('./route-handlers/ContactHandler');
 var ProjectHandler = require('./route-handlers/ProjectHandler');
 
 var secret = require('../config/db').secret;
@@ -13,6 +14,10 @@ module.exports = function(router) {
         console.log('API Request');
         next();
     });
+
+    //==================== FORM ============================
+    router.route('/contact')
+        .post(ContactHandler.postMessage);
 
     //==================== GET PROJECTS ============================
     router.route('/projects')

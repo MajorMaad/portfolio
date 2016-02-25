@@ -1,5 +1,6 @@
 $theme-primary: #00796B;
 $theme-dark: #2c3e50;
+$gray-lighter: lighten(#000, 93.5%);
 
 /////// Mixins ////////
 @mixin transition-all() {
@@ -344,6 +345,57 @@ header {
                     font-size: 22px;
                 }
             }
+        }
+    }
+}
+
+#contact {
+    .btn {
+        &:hover, &:visited, &:focus, &:active {
+            background-color: $theme-dark;
+            margin-top: 10px;
+        }
+    }
+
+    form {
+        margin-bottom: 50px;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 5px;
+        padding-bottom: 0.5em;
+        border-bottom: 2px solid rgba($theme-primary, 0.4);
+
+        input,
+        textarea {
+            z-index: 1;
+            position: relative;
+            margin-bottom: 5px;
+            padding-right: 0;
+            padding-left: 0;
+            border: none;
+            border-radius: 0;
+            font-size: 1.5em;
+            background: none;
+            box-shadow: none !important;
+            resize: none;
+        }
+        label {
+            display: block;
+            z-index: 0;
+            position: relative;
+            top: 2em;
+            margin: 0;
+            font-size: 0.85em;
+            line-height: 1.764705882em;
+            vertical-align: middle;
+            vertical-align: baseline;
+            opacity: 0;
+            -webkit-transition: top 0.3s ease,opacity 0.3s ease;
+    	    -moz-transition: top 0.3s ease,opacity 0.3s ease;
+    	    -ms-transition: top 0.3s ease,opacity 0.3s ease;
+    	    transition: top 0.3s ease,opacity 0.3s ease;
         }
     }
 }
