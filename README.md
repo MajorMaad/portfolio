@@ -14,6 +14,13 @@ module.exports = {
     url: 'mymongodbURL'
 };
 ```
+and config/contact.js :
+```javascript
+module.exports = {
+    email: 'my@email.com',
+    password: 'pass'
+};
+```
 then :
 ```
 npm install
