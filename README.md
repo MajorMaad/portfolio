@@ -37,3 +37,10 @@ http://localhost:8080
 ## Technologies
 
 This portfolio has been made using Angular.js on the front-end and Node.js, Express and MongoDB on the back-end.
+
+## Environment / Configuration variables
+
+MONGOLAB_URI
+EMAIL
+PASSWORD
+SECRET

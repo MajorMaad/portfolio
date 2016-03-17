@@ -6,8 +6,8 @@ var contact = require('./../../config/contact');
 var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: contact.email,
-        pass: contact.password
+        user: process.env.EMAIL || contact.email,
+        pass: process.env.PASSWORD || contact.password
     }
 });
 
