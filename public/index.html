@@ -66,7 +66,8 @@
                 <h1>Web and mobile developper</h1>
                 <hr>
                 <p>
-                    Looking for a 6 months internship, starting from August 2016
+                    Looking for a 6 months internship
+                    </br>starting from August / September 2016
                 </p>
                 <a href="#projects" class="btn btn-primary btn-xl page-scroll">My projects</a>
             </div>
@@ -79,7 +80,7 @@
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">About me</h2>
                     <p class="text-faded">
-                        I am young engineer about to get my diploma in Computer Science. Passionate about new technologies, music and sports, I also like to experiment new things in Web and Mobile development.
+                        I am a young engineer about to get my diploma in Computer Science. Passionate about new technologies, music and sports, I also like to experiment new things in Web and Mobile development.
                     </p>
                     <a href="#contact" class="btn btn-default btn-xl page-scroll">Contact me</a>
                 </div>
@@ -390,6 +391,14 @@
                     <h2 class="section-heading">Get in Touch !</h2>
                     <hr class="primary">
 
+                    <div class="alert alert-success" ng-show="formSuccess=='success'">
+                        <strong>Success !</strong> Your message has been sent.
+                    </div>
+
+                    <div class="alert alert-danger" ng-show="formSuccess=='error'">
+                        <strong>Error !</strong> Your message has not been sent, <a href="mailto:quentin.audinot@gmail.com">try here</a>
+                    </div>
+
                     <form name="contactForm" ng-submit="processForm(contactForm.$valid)" novalidate>
 
                         <div class="form-group" ng-class="{ 'has-error': contactForm.firstName.$invalid && !contactForm.firstName.$pristine }">
@@ -416,16 +425,23 @@
                             <p ng-show="contactForm.message.$invalid && !contactForm.message.$pristine" class="help-block">Your message is required.</p>
                         </div>
 
-                        <button type="submit" class="btn btn-primary btn-xl" ng-disabled="contactForm.$invalid">
+                        <div class="loader" ng-show="formSuccess=='processing'">Loading...</div>
+
+                        <button type="submit" class="btn btn-primary btn-xl" ng-disabled="contactForm.$invalid" ng-show="formSuccess!='processing'">
                             <span class="fa fa-check"></span> Submit
                         </button>
                     </form>
 
                 </div>
 
-                <div class="col-lg-4 col-lg-offset-2 text-center">
+                <div class="col-lg-4 text-center">
                     <i class="fa fa-phone fa-3x wow bounceIn"></i>
                     <p>(+33) 06 19 73 16 09 </p>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <i class="fa fa-skype fa-3x wow bounceIn"></i>
+                    <p>quentin.audinot</p>
                 </div>
 
                 <div class="col-lg-4 text-center">
