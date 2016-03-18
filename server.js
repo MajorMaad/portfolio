@@ -6,8 +6,8 @@ var express = require('express'),
     path = require('path'),
     favicon = require('serve-favicon');
 
-var db = require('./config/db');
-mongoose.connect(process.env.MONGOLAB_URI || db.url);
+// var db = require('./config/db');
+mongoose.connect(process.env.MONGOLAB_URI);
 
 var port = process.env.PORT || 8080;
 

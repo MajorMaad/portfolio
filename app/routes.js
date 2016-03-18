@@ -5,7 +5,7 @@ var User = require('./models/user');
 var ContactHandler = require('./route-handlers/ContactHandler');
 var ProjectHandler = require('./route-handlers/ProjectHandler');
 
-var secret = process.env.SECRET || require('../config/db').secret;
+var secret = process.env.SECRET;
 
 module.exports = function(router) {
 
