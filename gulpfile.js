@@ -26,7 +26,7 @@ gulp.task('styles', function() {
 });
 
 gulp.task('scripts', function() {
-    return gulp.src('public/src/js/**/*.js')
+    return gulp.src(['public/src/js/controllers/*.js', 'public/src/js/services/*.js', 'public/src/js/app.js'])
         .pipe(concat('app.min.js'))
         .pipe(uglify({ mangle: false }))
         .pipe(gulp.dest(outputDir + 'js'));
