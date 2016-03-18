@@ -2,6 +2,9 @@
     "name": "portfolio",
     "main": "server.js",
     "version": "0.0.1",
+    "engines": {
+        "node": "4.3.2"
+    },
     "scripts": {
         "start": "node server.js",
         "postinstall": "bower install && gulp build"
