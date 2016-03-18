@@ -1,21 +1,25 @@
 {
-  "name": "portfolio",
-  "main": "server.js",
-  "version": "0.0.1",
-  "dependencies": {
-    "body-parser": "~1.14.1",
-    "express": "~4.13.3",
-    "jsonwebtoken": "~5.4.1",
-    "method-override": "~2.3.5",
-    "mongoose": "~3.8.0",
-    "nodemailer": "~2.2.1",
-    "password-hash": "~1.2.2",
-    "serve-favicon": "^2.3.0"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-sass": "^2.1.1",
-    "gulp-uglify": "^1.5.1"
-  }
+    "name": "portfolio",
+    "main": "server.js",
+    "version": "0.0.1",
+    "scripts": {
+        "start": "node server.js",
+        "postinstall": "bower install && gulp build"
+    },
+    "dependencies": {
+        "body-parser": "~1.14.1",
+        "express": "~4.13.3",
+        "jsonwebtoken": "~5.4.1",
+        "method-override": "~2.3.5",
+        "mongoose": "~3.8.0",
+        "nodemailer": "~2.2.1",
+        "password-hash": "~1.2.2",
+        "serve-favicon": "^2.3.0"
+    },
+    "devDependencies": {
+        "gulp": "^3.9.0",
+        "gulp-concat": "^2.6.0",
+        "gulp-sass": "^2.1.1",
+        "gulp-uglify": "^1.5.1"
+    }
 }

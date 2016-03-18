@@ -7,6 +7,7 @@ var env = process.env.NODE_ENV || 'development';
 var outputDir = "public/dist/";
 
 gulp.task('default', ['scripts', 'styles', 'watch']);
+gulp.task('build', ['scripts', 'styles']);
 
 gulp.task('styles', function() {
     var config = {};
