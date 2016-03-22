@@ -11,7 +11,6 @@ module.exports = function(router) {
 
     router.use(function(req, res, next) {
         //TODO: test request
-        console.log('API Request');
         next();
     });
 
@@ -22,37 +21,27 @@ module.exports = function(router) {
     //==================== GET PROJECTS ============================
     router.route('/projects')
         .get(ProjectHandler.getProjects);
-
     router.route('/projects/:project_id')
         .get(ProjectHandler.getProject);
 
     // ================= AUTHENTICATION =================================
     router.post('/authenticate', function(req, res) {
-        User.findOne({
-            name: req.body.name
-        }, function(err, user) {
-            if (err)
-                res.send(err);
+        if (req.body.name == process.env.ADMIN_NAME && req.body.password == process.env.ADMIN_PASSWORD) {
+            var token = jwt.sign(req.body.name, secret, {
+                expiresIn: 1440*60
+            });
 
-            if (!user) {
-                res.json({ success: false, message: 'Authentication failed. User not found.' });
-            } else {
-                if (user.password != req.body.password) {
-                    res.json({ success: false, message: 'Authentication failed. Wrong password.' });
-                } else {
-                    //TODO: Add attributes to the user and pass to the token
-                    var token = jwt.sign(user.name, secret, {
-                        expiresIn: 1440*60
-                    });
-
-                    res.json({
-                        success: true,
-                        message: 'Token delivered for 24h',
-                        token: token
-                    });
-                }
-            }
-        });
+            res.json({
+                success: true,
+                message: 'Token delivered for 24h',
+                token: token
+            });
+        } else {
+            res.json({
+                success: false,
+                message: 'Authentication failed.'
+            });
+        }
     });
 
     router.use(function(req, res, next) {
@@ -78,14 +67,10 @@ module.exports = function(router) {
         }
     });
 
-    // ================= USERS =================================
-    router.route('/users')
-        .get(function(req, res) {
-            User.find({}, function(err, users) {
-                if (err)
-                    res.send(err);
-
-                res.json(users);
-            });
-        });
+    // ================= PROJECTS ==============================
+    router.route('/projects')
+        .post(ProjectHandler.postProject);
+    router.route('/projects/:project_id')
+        .put(ProjectHandler.updateProject)
+        .delete(ProjectHandler.deleteProject);
 };
