@@ -9,5 +9,8 @@ public/libs
 .npm
 npm-debug.log
 
-# DB config
+# config folder
 config
+
+# Launching script
+launch.sh

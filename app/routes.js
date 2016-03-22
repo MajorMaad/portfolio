@@ -1,7 +1,5 @@
 var jwt = require('jsonwebtoken');
 
-var User = require('./models/user');
-
 var ContactHandler = require('./route-handlers/ContactHandler');
 var ProjectHandler = require('./route-handlers/ProjectHandler');
 
@@ -52,7 +50,7 @@ module.exports = function(router) {
                 if (err) {
                     return res.json({
                         success: false,
-                        message: 'Failed to authenticate token.'
+                        message: err
                     });
                 } else {
                     req.decoded = decoded;

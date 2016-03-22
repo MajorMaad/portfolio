@@ -1,13 +1,12 @@
 angular.module('projectService', [])
+    .factory('Projects', function($http) {
+        return {
+            getProject: function(id) {
+                return $http.get('/api/projects/' + id);
+            },
 
-  .factory('Projects' ,function($http) {
-    return {
-      getProject: function(id) {
-        return $http.get('/api/projects/' + id);
-      },
-
-      getProjects: function() {
-        return $http.get('/api/projects');
-      }
-    };
-  });
+            getProjects: function() {
+                return $http.get('/api/projects');
+            }
+        };
+    });

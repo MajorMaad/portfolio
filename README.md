@@ -2,36 +2,14 @@
 
 ## Install
 
-This repository contains the code for my portfolio, hosted on ...
-
-It has been made with Angular.js on the front-end,
+This repository contains the code for my portfolio, hosted on quentinaudinot.heroku.com
 
 Installation :
-First create a file config/db.js with the following content :
-```javascript
-module.exports = {
-    secret: 'mysecret',
-    url: 'mymongodbURL'
-};
-```
-and config/contact.js :
-```javascript
-module.exports = {
-    email: 'my@email.com',
-    password: 'pass'
-};
-```
-then :
 ```
 npm install
 bower install
 gulp
 npm start
-```
-
-then connect on :
-```
-http://localhost:8080
 ```
 
 ## Technologies
@@ -44,3 +22,5 @@ MONGOLAB_URI
 EMAIL
 PASSWORD
 SECRET
+ADMIN_NAME
+ADMIN_PASSWORD

@@ -14,11 +14,16 @@ module.exports = {
     postProject: function(req, res) {
         var project = new Project();
         project.title = req.body.title;
+        project.category = req.body.category;
         project.image = req.body.image;
         project.description = req.body.description;
+        project.link = req.body.link;
+        project.technologies = req.body.technologies;
+        project.priority = req.body.priority;
 
         project.save(function(err) {
             if (err) res.send(err);
+            else res.send(project);
         });
     },
 
@@ -27,7 +32,9 @@ module.exports = {
         Project.findById(req.params.project_id, function(err, project) {
             if (err) res.send(err);
 
-            res.json(project);
+            res.json({
+                message: 'Project saved'
+            });
         });
     },
 
@@ -36,9 +43,13 @@ module.exports = {
         Project.findById(req.params.project_id, function(err, project) {
             if (err) res.send(err);
 
-            project.title = req.body.title;
-            project.image = req.body.image;
-            project.description = req.body.description;
+            project.title = req.body.title || project.title;
+            project.category = req.body.category || project.category;
+            project.image = req.body.image || project.image;
+            project.description = req.body.description || project.description;
+            project.link = req.body.link || project.link;
+            project.technologies = req.body.technologies || project.technologies;
+            project.priority = req.body.priority || project.priority;
 
             project.save(function(err) {
                 if (err) res.send(err);

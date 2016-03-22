@@ -167,96 +167,16 @@
     <section class="no-padding" id="projects">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://github.com/loupstigrou/ScanMonsters" target="_blank" class="projects-box">
-                        <img src="img/portfolio/1.jpg" class="img-responsive" alt="" />
+                <div class="col-lg-4 col-sm-6" ng-repeat="project in projects | limitTo: 6">
+                    <a href="{{ project.link }}" target="_blank" class="projects-box" id="{{ project._id }}">
+                        <img src="{{ ('/img/portfolio/' + project.image) }}" class="img-responsive" alt="" />
                         <div class="projects-box-caption">
                             <div class="projects-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Android application
+                                    {{ project.category }}
                                 </div>
                                 <div class="project-name">
-                                    Scan Monsters
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://lesondelarade.com/" target="_blank" class="projects-box">
-                        <img src="img/portfolio/2.jpg" class="img-responsive" alt="" />
-                        <div class="projects-box-caption">
-                            <div class="projects-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Website
-                                </div>
-                                <div class="project-name">
-                                    Le Son de la Rade: Student Webradio
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://travelexpress-1119.appspot.com/" target="_blank" class="projects-box">
-                        <img src="img/portfolio/3.jpg" class="img-responsive" alt="" />
-                        <div class="projects-box-caption">
-                            <div class="projects-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Website
-                                </div>
-                                <div class="project-name">
-                                    TravelExpress: Ridesharing Web application
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://play.google.com/store/apps/details?id=com.lesondelarade.qaudinot.lesondelarade" target="_blank" class="projects-box">
-                        <img src="img/portfolio/4.jpg" class="img-responsive" alt="" />
-                        <div class="projects-box-caption">
-                            <div class="projects-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Android application
-                                </div>
-                                <div class="project-name">
-                                    Le Son de la Rade: Student Webradio
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="https://www.facebook.com/getflaggit/?fref=ts" target="_blank" class="projects-box">
-                        <img src="img/portfolio/5.jpg" class="img-responsive" alt="" />
-                        <div class="projects-box-caption">
-                            <div class="projects-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Android application
-                                </div>
-                                <div class="project-name">
-                                    Flagg'it
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-lg-4 col-sm-6">
-                    <a href="http://codepen.io/MajorMaad/" target="_blank" class="projects-box">
-                        <img src="img/portfolio/6.jpg" class="img-responsive" alt="" />
-                        <div class="projects-box-caption">
-                            <div class="projects-box-caption-content">
-                                <div class="project-category text-faded">
-                                    Front-end development
-                                </div>
-                                <div class="project-name">
-                                    Codepen Showcase
+                                    {{ project.title }}
                                 </div>
                             </div>
                         </div>
@@ -264,6 +184,7 @@
                 </div>
             </div>
         </div>
+        <!-- TODO: Ne prendre que les 6 premiers projets -->
     </section>
 
     <aside class="bg-dark">
