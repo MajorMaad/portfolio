@@ -19,3 +19,10 @@
 * GET    `/api/projects/:project_id/technologies/:technology_id`
 * PUT    `/api/projects/:project_id/technologies/:technology_id`
 * DELETE `/api/projects/:project_id/technologies/:technology_id`
+
+## Experiences
+* GET    `/api/experiences`
+* POST   `/api/experiences`
+* GET    `/api/experiences/:experience_id`
+* PUT    `/api/experiences/:experience_id`
+* DELETE `/api/experiences/:experience_id`

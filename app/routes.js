@@ -3,6 +3,7 @@ var jwt = require('jsonwebtoken');
 var ContactHandler = require('./route-handlers/ContactHandler');
 var ProjectHandler = require('./route-handlers/ProjectHandler');
 var TechnologyHandler = require('./route-handlers/TechnologyHandler');
+var ExperienceHandler = require('./route-handlers/ExperienceHandler');
 
 var secret = process.env.SECRET;
 
@@ -29,6 +30,12 @@ module.exports = function(router) {
 
     router.route('/projects/:project_id/technologies/:technology_id')
         .get(TechnologyHandler.getTechnology);
+
+    // =================== GET EXPERIENCES =========================
+    router.route('/experiences')
+        .get(ExperienceHandler.getExperiences);
+    router.route('/experiences/:experience_id')
+        .get(ExperienceHandler.getExperience);
 
     // ================= AUTHENTICATION ============================
     router.post('/authenticate', function(req, res) {
@@ -73,7 +80,7 @@ module.exports = function(router) {
         }
     });
 
-    // ================= MODIFY PROJECTS =======================
+    // ================= MODIFY PROJECTS ========================
     router.route('/projects')
         .post(ProjectHandler.postProject);
     router.route('/projects/:project_id')
@@ -81,11 +88,20 @@ module.exports = function(router) {
         .delete(ProjectHandler.deleteProject);
 
 
-    // ================= MODIFY TECHNOLOGIES ===================
+    // ================= MODIFY TECHNOLOGIES ====================
     router.route('/projects/:project_id/technologies')
         .post(TechnologyHandler.postTechnology);
 
     router.route('/projects/:project_id/technologies/:technology_id')
         .put(TechnologyHandler.updateTechnology)
         .delete(TechnologyHandler.deleteTechnology);
+
+
+    // ================= MODIFY EXPERIENCES =====================
+    router.route('/experiences')
+        .post(ExperienceHandler.postExperience);
+
+    router.route('/experiences/:experience_id')
+        .put(ExperienceHandler.updateExperience)
+        .delete(ExperienceHandler.deleteExperience);
 };
