@@ -2,6 +2,7 @@ var jwt = require('jsonwebtoken');
 
 var ContactHandler = require('./route-handlers/ContactHandler');
 var ProjectHandler = require('./route-handlers/ProjectHandler');
+var TechnologyHandler = require('./route-handlers/TechnologyHandler');
 
 var secret = process.env.SECRET;
 
@@ -12,17 +13,24 @@ module.exports = function(router) {
         next();
     });
 
-    //==================== FORM ============================
+    // =================== FORM ====================================
     router.route('/contact')
         .post(ContactHandler.postMessage);
 
-    //==================== GET PROJECTS ============================
+    // =================== GET PROJECTS ============================
     router.route('/projects')
         .get(ProjectHandler.getProjects);
     router.route('/projects/:project_id')
         .get(ProjectHandler.getProject);
 
-    // ================= AUTHENTICATION =================================
+    // =================== GET TECHNOLOGIES ========================
+    router.route('/projects/:project_id/technologies')
+        .get(TechnologyHandler.getTechnologies);
+
+    router.route('/projects/:project_id/technologies/:technology_id')
+        .get(TechnologyHandler.getTechnology);
+
+    // ================= AUTHENTICATION ============================
     router.post('/authenticate', function(req, res) {
         if (req.body.name == process.env.ADMIN_NAME && req.body.password == process.env.ADMIN_PASSWORD) {
             var token = jwt.sign(req.body.name, secret, {
@@ -65,10 +73,19 @@ module.exports = function(router) {
         }
     });
 
-    // ================= PROJECTS ==============================
+    // ================= MODIFY PROJECTS =======================
     router.route('/projects')
         .post(ProjectHandler.postProject);
     router.route('/projects/:project_id')
         .put(ProjectHandler.updateProject)
         .delete(ProjectHandler.deleteProject);
+
+
+    // ================= MODIFY TECHNOLOGIES ===================
+    router.route('/projects/:project_id/technologies')
+        .post(TechnologyHandler.postTechnology);
+
+    router.route('/projects/:project_id/technologies/:technology_id')
+        .put(TechnologyHandler.updateTechnology)
+        .delete(TechnologyHandler.deleteTechnology);
 };

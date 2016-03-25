@@ -18,9 +18,9 @@ This portfolio has been made using Angular.js on the front-end and Node.js, Expr
 
 ## Environment / Configuration variables
 
-MONGOLAB_URI
-EMAIL
-PASSWORD
-SECRET
-ADMIN_NAME
-ADMIN_PASSWORD
+* MONGOLAB_URI
+* EMAIL
+* PASSWORD
+* SECRET
+* ADMIN_NAME
+* ADMIN_PASSWORD

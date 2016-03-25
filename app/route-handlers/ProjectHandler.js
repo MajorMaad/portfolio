@@ -23,7 +23,8 @@ module.exports = {
 
         project.save(function(err) {
             if (err) res.send(err);
-            else res.send(project);
+
+            res.send(project);
         });
     },
 
@@ -54,9 +55,7 @@ module.exports = {
             project.save(function(err) {
                 if (err) res.send(err);
 
-                res.json({
-                    message: 'Project updated'
-                });
+                res.json({ message: 'Project updated' });
             });
         });
     },
@@ -68,9 +67,7 @@ module.exports = {
         }, function(err, project) {
             if (err) res.send(err);
 
-            res.json({
-                message: 'Project deleted'
-            });
+            res.json({ message: 'Project deleted' });
         });
     }
 };
