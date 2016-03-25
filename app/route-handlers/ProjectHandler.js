@@ -33,9 +33,7 @@ module.exports = {
         Project.findById(req.params.project_id, function(err, project) {
             if (err) res.send(err);
 
-            res.json({
-                message: 'Project saved'
-            });
+            res.json(project);
         });
     },
 
