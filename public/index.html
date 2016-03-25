@@ -167,7 +167,7 @@
     <section class="no-padding" id="projects">
         <div class="container-fluid">
             <div class="row no-gutter">
-                <div class="col-lg-4 col-sm-6" ng-repeat="project in projects | limitTo: 6">
+                <div class="col-lg-4 col-sm-6" ng-repeat="project in projects | orderBy: 'priority' | limitTo: 6">
                     <a href="{{ project.link }}" target="_blank" class="projects-box" id="{{ project._id }}">
                         <img src="{{ ('/img/portfolio/' + project.image) }}" class="img-responsive" alt="" />
                         <div class="projects-box-caption">
@@ -184,7 +184,6 @@
                 </div>
             </div>
         </div>
-        <!-- TODO: Ne prendre que les 6 premiers projets -->
     </section>
 
     <aside class="bg-dark">
