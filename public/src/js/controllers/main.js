@@ -1,7 +1,8 @@
-angular.module('projectController', [])
+angular.module('projectController', ['ngSanitize'])
 
-    .controller('mainController', function($scope, $http, Projects) {
+    .controller('mainController', function($scope, $http, Projects, Experiences) {
         $scope.projects = [];
+        $scope.experiences = [];
 
         // Get all the projects (call to the api, see ProjectHandler.js)
         Projects.getProjects()
@@ -16,6 +17,12 @@ angular.module('projectController', [])
                     $scope.project = project;
                 });
         };
+
+        // Get all the experiences (call to the api, see ExperienceHandler.js)
+        Experiences.getExperiences()
+            .success(function(experiences) {
+                $scope.experiences = experiences;
+            });
 
         $scope.formData = {};
         $scope.formSuccess = null;

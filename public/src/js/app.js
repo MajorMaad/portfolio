@@ -1,1 +1,1 @@
-angular.module('portfolioApp', ['projectController', 'projectService']);
+angular.module('portfolioApp', ['projectController', 'projectService', 'experienceService']);

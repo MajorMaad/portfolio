@@ -7,6 +7,7 @@
     "angular": "latest",
     "animate.css": "latest",
     "wowjs": "latest",
-    "jquery-easing-original": "latest"
+    "jquery-easing-original": "latest",
+    "angular-sanitize": "latest"
   }
 }
