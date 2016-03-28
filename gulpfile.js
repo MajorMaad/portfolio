@@ -11,16 +11,12 @@ gulp.task('build', ['scripts', 'styles']);
 
 gulp.task('styles', function() {
     var config = {};
-
-    if (env === 'development') {
+    if (env === 'development')
         config.sourceComments = 'map';
-    }
-
-    if (env === 'production') {
+    if (env === 'production')
         config.outputStyle = 'compressed';
-    }
 
-    return gulp.src('public/src/scss/**/*.scss')
+    return gulp.src('public/src/scss/style.scss')
         .pipe(sass(config))
         .pipe(gulp.dest(outputDir + 'css'));
 });
