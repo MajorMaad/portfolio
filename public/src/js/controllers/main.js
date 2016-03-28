@@ -10,14 +10,6 @@ angular.module('projectController', ['ngSanitize'])
                 $scope.projects = projects;
             });
 
-        // Get the project by id (call to the api, see ProjectHandler.js)
-        $scope.getProject = function(id) {
-            Projects.getProject(id)
-                .success(function(project) {
-                    $scope.project = project;
-                });
-        };
-
         // Get all the experiences (call to the api, see ExperienceHandler.js)
         Experiences.getExperiences()
             .success(function(experiences) {
@@ -49,5 +41,17 @@ angular.module('projectController', ['ngSanitize'])
                     }
                 });
             }
+        };
+
+        // Display modal associated with specific project
+        $scope.displayModal = function(id) {
+            var modal_id = 'modal-' + id;
+            var content = document.getElementById(modal_id);
+
+            var modal = new Modal({
+                content: content
+            });
+
+            modal.open();
         };
   });
