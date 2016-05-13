@@ -23,7 +23,10 @@ module.exports = {
             subject: 'Portfolio message from : ' + data.firstName + ' ' + data.lastName,
             text: 'Email : ' + data.email + '\nMessage : \n' + data.message
         }, function(error, info) {
-            if (error) data.sucess = false;
+            if (error) {
+                data.sucess = false;
+                data.error = error;
+            }
             else data.success = true;
 
             res.json(data);

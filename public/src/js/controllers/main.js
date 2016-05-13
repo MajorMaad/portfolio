@@ -31,10 +31,7 @@ angular.module('projectController', ['ngSanitize'])
                 })
                 .success(function(data) {
                     if (!data.success) {
-                        $scope.errorFirstName = data.errors.firstName;
-                        $scope.errorLastName = data.errors.lastName;
-                        $scope.errorEmail = data.errors.email;
-                        $scope.errorMessage = data.errors.message;
+                        console.log(data);
                         $scope.formSuccess = "error";
                     } else {
                         $scope.formSuccess = "success";
