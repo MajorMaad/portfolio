@@ -14,3 +14,6 @@ config
 
 # Launching script
 launch.sh
+
+# MongoDB backup
+mongo

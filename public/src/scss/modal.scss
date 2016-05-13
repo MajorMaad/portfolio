@@ -3,9 +3,7 @@
     z-index: 9998;
     top: 0;
     left: 0;
-
     opacity: 0;
-
     width: 100%;
     height: 100%;
 
@@ -153,10 +151,17 @@
 
 .scotch-modal .img-rounded {
     border: 4px solid $theme-primary;
+    margin: auto;
+    margin-bottom: 20px;
 }
 
 .scotch-modal .project-technologies img {
     width: 60px;
     height: 60px;
     margin: 5px;
+}
+
+.scotch-modal p {
+    padding: 20px 50px 10px 50px;
+    text-align: justify;
 }
