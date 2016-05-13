@@ -31,7 +31,6 @@ angular.module('projectController', ['ngSanitize'])
                 })
                 .success(function(data) {
                     if (!data.success) {
-                        console.log(data);
                         $scope.formSuccess = "error";
                     } else {
                         $scope.formSuccess = "success";

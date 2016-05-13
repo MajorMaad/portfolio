@@ -1,15 +1,14 @@
 var nodemailer = require('nodemailer');
+var mg = require('nodemailer-mailgun-transport');
 var Project = require('./../models/project');
-// var contact = require('./../../config/contact');
 
 // Create the transporter to send emails
-var transporter = nodemailer.createTransport({
-    service: 'gmail',
+var transporter = nodemailer.createTransport(mg({
     auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD
+        api_key: process.env.EMAIL_API_KEY,
+        domain: process.env.EMAIL_DOMAIN
     }
-});
+}));
 
 module.exports = {
 
