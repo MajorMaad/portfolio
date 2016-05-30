@@ -40,8 +40,14 @@ module.exports = function(router) {
     // ================= AUTHENTICATION ============================
     router.post('/authenticate', function(req, res) {
         if (req.body.name == process.env.ADMIN_NAME && req.body.password == process.env.ADMIN_PASSWORD) {
-            var token = jwt.sign(req.body.name, secret, {
-                expiresIn: 1440*60
+            var payload = {
+              "iss": "quentinaudinot",
+              "name": req.body.name,
+              "admin": true
+            };
+
+            var token = jwt.sign(payload, secret, {
+                expiresIn: '24h'
             });
 
             res.json({
