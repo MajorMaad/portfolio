@@ -3,5 +3,6 @@ var Schema = mongoose.Schema;
 
 module.exports = mongoose.model('Technology', new Schema({
     name: String,
-    logo: String
+    logo: String,
+    url: String
 }));

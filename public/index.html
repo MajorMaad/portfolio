@@ -64,10 +64,6 @@
                 <hr>
                 <h1>Web and mobile developper</h1>
                 <hr>
-                <p>
-                    Looking for a 6 months internship
-                    <br/>starting from August / September 2016
-                </p>
                 <a href="#projects" class="btn btn-primary btn-xl page-scroll">My projects</a>
             </div>
         </div>
@@ -114,8 +110,8 @@
                         <i class="fa fa-4x fa-code wow bounceIn text-primary" data-wow-delay=".1s"></i>
                         <h3>Back-end development</h3>
                         <p class="text-muted">
-                            Node.js / Express <br/>
-                            PHP / Python
+                            PHP / Laravel <br/>
+                            Node.js / Express
                         </p>
                     </div>
                 </div>
@@ -135,7 +131,7 @@
                         <h3>Databases</h3>
                         <p class="text-muted">
                             MongoDB <br/>
-                            MySQL
+                            MySQL / PostgreSQL
                         </p>
                     </div>
                 </div>
@@ -191,7 +187,7 @@
                         <h3>Technologies :</h3>
                         <div class="project-technologies row">
                             <div class="col-lg-4" ng-repeat="technology in project.technologies">
-                                <a href="{{ 'http://google.com/search?q=' + technology.name }}" target="_blank" class="popoverData" data-content="{{ technology.name }}" rel="popover" data-placement="bottom" data-trigger="hover">
+                                <a href="{{ technology.url }}" target="_blank" class="popoverData" data-content="{{ technology.name }}" rel="popover" data-placement="bottom" data-trigger="hover">
                                     <img src="{{ '/img/technologies/' + technology.logo }}" alt="{{ technology.name }}" title="{{ technology.name }}" />
                                 </a>
                             </div>

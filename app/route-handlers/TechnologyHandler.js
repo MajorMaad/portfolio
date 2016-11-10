@@ -19,6 +19,7 @@ module.exports = {
             var technology = new Technology();
             technology.name = req.body.name;
             technology.logo = req.body.logo;
+            technology.url = req.body.url;
 
             project.technologies.push(technology);
 
@@ -46,6 +47,7 @@ module.exports = {
 
             project.technologies.id(req.params.technology_id).name = req.body.name || project.technologies.id(req.params.technology_id).name;
             project.technologies.id(req.params.technology_id).logo = req.body.logo || project.technologies.id(req.params.technology_id).logo;
+            project.technologies.id(req.params.technology_id).url = req.body.url || project.technologies.id(req.params.technology_id).url;
             project.save(function(err) {
                 if (err) res.send(err);
 
